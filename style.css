@@ -1,0 +1,265 @@
+@import url('https://fonts.cdnfonts.com/css/barlow');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+a {
+    /* max-width: 1440px; */
+    color: black;
+    /* cursor: pointer; */
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    /* margin: 0px;
+    margin-left: auto;
+    margin-right: auto; */
+    text-decoration: none;
+}
+
+
+/* Header */
+header {
+    background-image: url('/assets/desktop/image-header.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+header .headerMenuWrapper {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+header .navigation ul {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+header>.headerMenuWrapper>.navigation>ul.navigationList li {
+    list-style: none;
+}
+
+
+header>.headerMenuWrapper .navigation>ul.navigationList li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+header .headerContentWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+
+}
+
+header .mainPhrase {
+    padding-top: 100px;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    color: white;
+    font-size: 64;
+}
+
+/* Main section with pictures */
+
+main section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main figure {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+main .separateText img {
+    width: 50%;
+}
+
+main .separateText:nth-child(odd) img {
+    order: 2;
+}
+
+main .separateText figcaption {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    width: 50%;
+    /* margin: 65px 25px; */
+    /* text-align: center; */
+}
+
+main .separateText figcaption h3 {
+    font-size: 30px;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    width: 60%;
+}
+
+main .separateText figcaption p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 25px;
+    margin-top: 30px;
+    width: 60%;
+}
+
+main .separateText figcaption a {
+    font-size: 18pxpx;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    /* padding-top: 60px; */
+}
+
+
+main .imageText {
+    width: 50%;
+}
+
+main .imageText figcaption {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+main .imageText figcaption h3 {
+    font-size: 27px;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    width: 100%;
+    opacity: 0.6;
+}
+
+main .imageText figcaption p {
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.6;
+
+}
+
+main .imageText img {
+    width: 100%;
+}
+
+
+
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+}
+
+.testimonial h1 {
+
+    font-size: 20px;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    color: gray;
+}
+.testimonialList {
+    width: 70%;
+}
+
+.testimonialList ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    gap: 20px;
+
+}
+
+.testimonialList img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.feedback {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: gray;
+}
+.name {
+    font-size: 18px;
+   font-family: 'Fraunces', serif;
+   font-weight: 900;
+}
+.position {
+    font-size: 14px;
+   padding-top: 10px;
+
+}
+.pictures { 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.pictures img {
+    width: 25%;
+}
+
+
+
+.footer {
+    align-items: center;
+    background-color: rgb(178, 230, 178);
+    display: flex;
+    flex-direction: column;
+    padding: 60px 30px;
+    gap: 40px;
+    justify-content: center;
+ }
+ .logo-footer img {
+   
+    height: 25px;
+    width: 123px;
+ }
+ .services {
+    display: flex;
+    gap: 30px;
+ }
+ .services a {
+   color: darkgreen;
+   font-size: 16px;
+   font-weight: 600;
+ }
+ .social-icons {
+   display: flex;
+   align-items: center;
+   gap: 20px
+ }
