@@ -1,5 +1,18 @@
 @import url('https://fonts.cdnfonts.com/css/barlow');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/Fraunces');
+
+:root {
+    --textFont: 'Barlow', sans-serif;
+    --headerFont: 'Fraunces', serif;
+}
+
+/* 
+- Family: [Barlow](https://fonts.google.com/specimen/Barlow)
+- Weights: 600
+
+- Family: [Fraunces](https://fonts.google.com/specimen/Fraunces)
+- Weights: 700, 900 
+*/
 
 * {
     margin: 0;
@@ -10,8 +23,7 @@
 a {
     /* max-width: 1440px; */
     color: black;
-    /* cursor: pointer; */
-    font-family: 'Barlow', sans-serif;
+    font-family: var(--textFont);
     font-size: 20px;
     font-weight: 600;
     /* margin: 0px;
@@ -19,6 +31,28 @@ a {
     margin-right: auto; */
     text-decoration: none;
 }
+
+@media screen and (min-width: 901px) {
+
+    .pictures img {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    header .mainPhrase {
+    text-align: center;}
+
+    .pictures img {
+        width: 50%;
+    }
+}
+
+
+
+
+
 
 
 /* Header */
@@ -57,11 +91,19 @@ header>.headerMenuWrapper .navigation>ul.navigationList li a {
     font-weight: 600;
 }
 
+header>.headerMenuWrapper .navigation>ul.navigationList li a:hover {
+        height: 50px;
+        /* font-size: 1.2rem; */
+        background-color: white; 
+        color:black;
+        border-radius: 30px;
+        padding: 10px;
+}
+
 header .headerContentWrapper {
     display: flex;
     width: 100%;
     justify-content: center;
-    /* flex-wrap: wrap; */
     flex-direction: column;
     align-items: center;
     gap: 100px;
@@ -70,7 +112,7 @@ header .headerContentWrapper {
 
 header .mainPhrase {
     padding-top: 100px;
-    font-family: 'Fraunces', serif;
+    font-family: var(--headerFont);
     font-weight: 900;
     color: white;
     font-size: 64;
@@ -104,13 +146,11 @@ main .separateText figcaption {
     justify-content: center;
     gap: 50px;
     width: 50%;
-    /* margin: 65px 25px; */
-    /* text-align: center; */
 }
 
 main .separateText figcaption h3 {
     font-size: 30px;
-    font-family: 'Fraunces', serif;
+    font-family: var(--headerFont);
     font-weight: 900;
     width: 60%;
 }
@@ -121,13 +161,13 @@ main .separateText figcaption p {
     line-height: 25px;
     margin-top: 30px;
     width: 60%;
+    color: rgb(120, 120, 120);
 }
 
 main .separateText figcaption a {
     font-size: 18pxpx;
     font-family: 'Fraunces', serif;
     font-weight: 700;
-    /* padding-top: 60px; */
 }
 
 
@@ -148,7 +188,7 @@ main .imageText figcaption {
 
 main .imageText figcaption h3 {
     font-size: 27px;
-    font-family: 'Fraunces', serif;
+    font-family: var(--headerFont);
     font-weight: 900;
     width: 100%;
     opacity: 0.6;
@@ -167,8 +207,7 @@ main .imageText img {
 
 
 
-
-.testimonial {
+main section.testimonial {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -176,17 +215,18 @@ main .imageText img {
     justify-content: center;
     gap: 50px;
     width: 100%;
+    margin: 100px 0 100px 0;
 }
 
-.testimonial h1 {
-
-    font-size: 20px;
-    font-family: 'Fraunces', serif;
+main section.testimonial h1 {
+    font-size: 16px;
+    font-family: var(--headerFont);
     font-weight: 900;
     text-transform: uppercase;
     text-align: center;
     color: gray;
 }
+
 .testimonialList {
     width: 70%;
 }
@@ -197,7 +237,6 @@ main .imageText img {
     list-style: none;
     justify-content: space-between;
     gap: 20px;
-
 }
 
 .testimonialList img {
@@ -206,7 +245,7 @@ main .imageText img {
     height: 70px;
 }
 
-.feedback {
+main section.testimonial .feedback {
     font-size: 16px;
     font-weight: 600;
     line-height: 25px;
@@ -214,52 +253,54 @@ main .imageText img {
     padding-bottom: 30px;
     color: gray;
 }
-.name {
-    font-size: 18px;
-   font-family: 'Fraunces', serif;
-   font-weight: 900;
-}
-.position {
-    font-size: 14px;
-   padding-top: 10px;
 
+main section.testimonial .name {
+    font-size: 18px;
+    font-family: var(--headerFont);
+    font-weight: 900;
 }
-.pictures { 
+
+main section.testimonial .position {
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+.pictures {
     width: 100%;
     display: flex;
     flex-direction: row;
 }
-.pictures img {
-    width: 25%;
-}
-
 
 
 .footer {
     align-items: center;
-    background-color: rgb(178, 230, 178);
+    background-color: #90d4c5;
     display: flex;
     flex-direction: column;
     padding: 60px 30px;
     gap: 40px;
     justify-content: center;
- }
- .logo-footer img {
-   
+}
+
+.logo-footer img {
+
     height: 25px;
     width: 123px;
- }
- .services {
+}
+
+.services {
     display: flex;
     gap: 30px;
- }
- .services a {
-   color: darkgreen;
-   font-size: 16px;
-   font-weight: 600;
- }
- .social-icons {
-   display: flex;
-   align-items: center;
-   gap: 20px
- }
+}
+
+.services a {
+    color: #3d7463;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
