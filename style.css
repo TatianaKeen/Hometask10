@@ -21,38 +21,31 @@
 
 *,
 a {
-    /* max-width: 1440px; */
     color: black;
     font-family: var(--textFont);
     font-size: 20px;
     font-weight: 600;
-    /* margin: 0px;
-    margin-left: auto;
-    margin-right: auto; */
     text-decoration: none;
 }
 
 @media screen and (min-width: 1024px) {
 
-    .pictures img {
-        width: 25%;
+    /* Pictures with separate text */
+
+    main figure {
+        flex-direction: row;
     }
 
     main .separateText img {
         width: 50%;
     }
 
-    main .separateText figcaption {
-        width: 50%;
-    }
-
-    main figure {
-
-        flex-direction: row;
-    }
-
     main .separateText:nth-child(odd) img {
         order: 2;
+    }
+
+    main .separateText figcaption {
+        width: 50%;
     }
 
     main .separateText figcaption p {
@@ -62,6 +55,64 @@ a {
     main .separateText figcaption h3 {
         font-size: 30px;
     }
+
+
+    /* Pictures with text on it */
+
+    main .imageText {
+        width: 50%;
+    }
+
+    main .imageText figcaption h3 {
+        font-size: 27px;
+    }
+
+    main .imageText figcaption p {
+        font-size: 12px;
+    }
+
+
+    /* Testimonials section */
+
+    main section.testimonial h1 {
+        font-size: 16px;
+    }
+
+    main section.testimonial .testimonialList ul {
+        flex-direction: row;
+    }
+
+    main section.testimonial .testimonialList ul li img {
+        width: 70px;
+        height: 70px;
+    }
+
+    main section.testimonial ul li p.feedback {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    main section.testimonial ul li p.name {
+        font-size: 18px;
+    }
+
+    main section.testimonial ul li p.position {
+        font-size: 12px;
+    }
+
+
+    /* Section with 4 pictures */
+
+    .pictures img {
+        width: 25%;
+    }
+
+
+    /* Footer */
+
+    footer.footer .services a {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 1023px) {
@@ -70,8 +121,11 @@ a {
         text-align: center;
     }
 
-    .pictures img {
-        width: 50%;
+
+    /* Pictures with separate text */
+
+    main figure {
+        flex-direction: column;
     }
 
     main .separateText img {
@@ -84,10 +138,6 @@ a {
         text-align: center;
     }
 
-    main figure {
-        flex-direction: column;
-    }
-
     main .separateText figcaption p {
         line-height: 40px;
         font-size: 25px;
@@ -97,15 +147,69 @@ a {
         font-size: 45px
     }
 
+
+    /* Pictures with text on it */
+
+    main .imageText {
+        width: 100%;
+    }
+
+    main .imageText figcaption h3 {
+        font-size: 45px;
+    }
+
+    main .imageText figcaption p {
+        font-size: 20px;
+    }
+
+
+    /* Testimonials section */
+
+    main section.testimonial h1 {
+        font-size: 24px;
+    }
+
+    main section.testimonial .testimonialList ul {
+        flex-direction: column;
+    }
+
+    main section.testimonial .testimonialList ul li img {
+        width: 100px;
+        height: 100px;
+    }
+
+    main section.testimonial .testimonialList ul li p.feedback {
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    main section.testimonial .testimonialList ul li p.name {
+        font-size: 22px;
+    }
+
+    main section.testimonial .testimonialList ul li p.position {
+        font-size: 18px;
+    }
+
+
+    /* Section with 4 pictures */
+
+    .pictures img {
+        width: 50%;
+    }
+
+
+    /* Footer */
+
+    .services a {
+        font-size: 25px;
+    }
 }
 
 
 
-
-
-
-
 /* Header */
+
 header {
     background-image: url('/assets/desktop/image-header.jpg');
     width: 100%;
@@ -176,6 +280,8 @@ header .mainPhrase {
     letter-spacing: 10px;
 }
 
+
+
 /* Main section with pictures */
 
 main section {
@@ -190,6 +296,9 @@ main figure {
     position: relative;
 }
 
+
+
+/* Pictures with separate text */
 main .separateText figcaption {
     display: flex;
     align-items: center;
@@ -237,9 +346,8 @@ main .separateText figcaption a.red:after {
 }
 
 
-main .imageText {
-    width: 50%;
-}
+
+/* Pictures with text on it */
 
 main .imageText figcaption {
     position: absolute;
@@ -253,7 +361,6 @@ main .imageText figcaption {
 }
 
 main .imageText figcaption h3 {
-    font-size: 27px;
     font-family: var(--headerFont);
     font-weight: 900;
     width: 100%;
@@ -261,7 +368,6 @@ main .imageText figcaption h3 {
 }
 
 main .imageText figcaption p {
-    font-size: 12px;
     font-weight: 500;
     opacity: 0.6;
 
@@ -272,6 +378,11 @@ main .imageText img {
 }
 
 
+/* Testimonials section */
+
+main section.testimonial {
+    flex-direction: column;
+}
 
 main section.testimonial {
     display: flex;
@@ -285,60 +396,67 @@ main section.testimonial {
 }
 
 main section.testimonial h1 {
-    font-size: 16px;
     font-family: var(--headerFont);
     font-weight: 900;
     text-transform: uppercase;
     text-align: center;
     color: gray;
+    letter-spacing: 10px;
+    opacity: 0.8;
 }
 
-.testimonialList {
+main section.testimonial .testimonialList {
     width: 70%;
 }
 
-.testimonialList ul {
+
+main section.testimonial .testimonialList ul {
     display: flex;
-    flex-direction: row;
     list-style: none;
     justify-content: space-between;
     gap: 20px;
 }
 
-.testimonialList img {
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
+main section.testimonial .testimonialList ul li {
+    padding-bottom: 60px;
 }
 
-main section.testimonial .feedback {
-    font-size: 16px;
+main section.testimonial .testimonialList ul li img {
+    border-radius: 50%;
+}
+
+main section.testimonial ul li p.feedback {
     font-weight: 600;
-    line-height: 25px;
     padding-top: 30px;
     padding-bottom: 30px;
     color: gray;
 }
 
-main section.testimonial .name {
-    font-size: 18px;
+main section.testimonial ul li p.name {
     font-family: var(--headerFont);
     font-weight: 900;
 }
 
-main section.testimonial .position {
-    font-size: 12px;
+main section.testimonial ul li p.position {
     padding-top: 10px;
+    opacity: 0.5;
 }
 
-.pictures {
+
+
+/* Section with 4 pictures */
+
+main section.pictures {
     width: 100%;
     display: flex;
     flex-direction: row;
 }
 
 
-.footer {
+
+/* Footer */
+
+footer.footer {
     align-items: center;
     background-color: #90d4c5;
     display: flex;
@@ -348,24 +466,22 @@ main section.testimonial .position {
     justify-content: center;
 }
 
-.logo-footer img {
-
+footer.footer .logo-footer img {
     height: 25px;
     width: 123px;
 }
 
-.services {
+footer.footer .services {
     display: flex;
     gap: 30px;
 }
 
-.services a {
+footer.footer .services a {
     color: #3d7463;
-    font-size: 16px;
     font-weight: 600;
 }
 
-.social-icons {
+footer.footer .social-icons {
     display: flex;
     align-items: center;
     gap: 20px
