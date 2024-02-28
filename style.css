@@ -32,14 +32,39 @@ a {
     text-decoration: none;
 }
 
-@media screen and (min-width: 901px) {
+@media screen and (min-width: 1024px) {
 
     .pictures img {
         width: 25%;
     }
+
+    main .separateText img {
+        width: 50%;
+    }
+
+    main .separateText figcaption {
+        width: 50%;
+    }
+
+    main figure {
+
+        flex-direction: row;
+    }
+
+    main .separateText:nth-child(odd) img {
+        order: 2;
+    }
+
+    main .separateText figcaption p {
+        font-size: 16px;
+    }
+
+    main .separateText figcaption h3 {
+        font-size: 30px;
+    }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1023px) {
 
     header .mainPhrase {
         text-align: center;
@@ -48,6 +73,30 @@ a {
     .pictures img {
         width: 50%;
     }
+
+    main .separateText img {
+        width: 100%;
+    }
+
+    main .separateText figcaption {
+        width: 100%;
+        padding: 80px 0px;
+        text-align: center;
+    }
+
+    main figure {
+        flex-direction: column;
+    }
+
+    main .separateText figcaption p {
+        line-height: 40px;
+        font-size: 25px;
+    }
+
+    main .separateText figcaption h3 {
+        font-size: 45px
+    }
+
 }
 
 
@@ -136,16 +185,9 @@ main section {
 
 main figure {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     position: relative;
-}
-
-main .separateText img {
-    width: 50%;
-}
-
-main .separateText:nth-child(odd) img {
-    order: 2;
 }
 
 main .separateText figcaption {
@@ -154,30 +196,44 @@ main .separateText figcaption {
     flex-direction: column;
     justify-content: center;
     gap: 50px;
-    width: 50%;
-    
 }
 
 main .separateText figcaption h3 {
-    font-size: 30px;
     font-family: var(--headerFont);
     font-weight: 900;
     width: 60%;
 }
 
 main .separateText figcaption p {
-    font-size: 16px;
     font-weight: 600;
-    line-height: 25px;
     margin-top: 30px;
     width: 60%;
     color: rgb(120, 120, 120);
 }
 
 main .separateText figcaption a {
-    font-size: 18pxpx;
+    font-size: 18px;
     font-family: 'Fraunces', serif;
     font-weight: 700;
+    text-align: center;
+}
+
+main .separateText figcaption a:after {
+    border-radius: 5px;
+    content: "";
+    width: 140px;
+    height: 8px;
+    display: block;
+    margin-top: -9px;
+    opacity: 0.3;
+}
+
+main .separateText figcaption a.yellow:after {
+    background-color: #ffcf01;
+}
+
+main .separateText figcaption a.red:after {
+    background-color: #ff7062;
 }
 
 
