@@ -457,16 +457,12 @@ main .imageText img {
 /* Testimonials section */
 
 main section.testimonial {
-    flex-direction: column;
-}
-
-main section.testimonial {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: center;
-    gap: 50px;
+    gap: 100px;
     width: 100%;
     margin: 100px 0 100px 0;
 }
