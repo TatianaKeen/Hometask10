@@ -152,8 +152,7 @@ header>.headerMenuWrapper .navigation>ul.navigationList li a {
     .mobileMenuBtn {
         display: block;
         position: absolute;
-        top: 0;
-        right: 0;
+        right: 25px;
         margin: auto;
         height: 50px;
         background: transparent;
