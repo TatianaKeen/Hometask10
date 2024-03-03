@@ -466,82 +466,79 @@ main {
                 }
             }
         }
-
-        &.testimonial {}
-
-        &.pictures {}
-    }
-}
-
-
-
-/* Testimonials section */
-
-main {
-    .testimonial {
-        @include flexContainer(column, center, center);
-        text-align: center;
-        gap: 100px;
-        width: $widthFull;
-        margin: 100px 0 100px 0;
-
-        h1 {
-            font-family: $headerFont;
-            font-weight: map-get($font-weight-header, bold);
-            text-transform: uppercase;
+    /* Testimonials section */
+        &.testimonial {
+            @include flexContainer(column, center, center);
             text-align: center;
-            color: $color-gray;
-            letter-spacing: 10px;
-            opacity: 0.8;
-        }
-
-        .testimonialList {
-            width: 70%;
-
-            ul {
-                @include flexContainer(null, space-between);
-                list-style: none;
-                gap: 20px;
-
-                li {
-                    padding-bottom: 60px;
-
-                    img {
-                        border-radius: 50%;
-                    }
-
-                    p {
-                        &.feedback {
-                            font-weight: $font-weight-text;
-                            padding-top: 30px;
-                            padding-bottom: 30px;
-                            color: $color-gray;
+            gap: 100px;
+            width: $widthFull;
+            margin: 100px 0 100px 0;
+    
+            h1 {
+                font-family: $headerFont;
+                font-weight: map-get($font-weight-header, bold);
+                text-transform: uppercase;
+                text-align: center;
+                color: $color-gray;
+                letter-spacing: 10px;
+                opacity: 0.8;
+            }
+    
+            .testimonialList {
+                width: 70%;
+    
+                ul {
+                    @include flexContainer(null, space-between);
+                    list-style: none;
+                    gap: 20px;
+    
+                    li {
+                        padding-bottom: 60px;
+    
+                        img {
+                            border-radius: 50%;
                         }
-
-                        &.name {
-                            font-family: $headerFont;
-                            font-weight: map-get($font-weight-header, bold);
-                        }
-
-                        &.position {
-                            padding-top: 10px;
-                            opacity: 0.5;
+    
+                        p {
+                            &.feedback {
+                                font-weight: $font-weight-text;
+                                padding-top: 30px;
+                                padding-bottom: 30px;
+                                color: $color-gray;
+                            }
+    
+                            &.name {
+                                font-family: $headerFont;
+                                font-weight: map-get($font-weight-header, bold);
+                            }
+    
+                            &.position {
+                                padding-top: 10px;
+                                opacity: 0.5;
+                            }
                         }
                     }
                 }
             }
         }
+        
+/* Section with 4 pictures */
+        &.pictures {
+            @include flexContainer(row);
+    width: $widthFull;
+        }
     }
 }
 
 
 
-/* Section with 4 pictures */
 
-main section.pictures {
-    @include flexContainer(row);
-    width: $widthFull;
-}
+
+
+
+
+
+
 
 
 
