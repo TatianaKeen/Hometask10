@@ -4,11 +4,10 @@ $headerFont: 'Fraunces', serif;
 $textFont: 'Barlow', sans-serif;
 
 $font-weight-text: 600;
-$font-weight-header: 900;
-// $font-weight-header: (
-//   regular: 700,
-//   bold: 900
-// );
+$font-weight-header: (
+  regular: 700,
+  bold: 900
+);
 
 $widthFull: 100%;
 $widthHalf: 50%;

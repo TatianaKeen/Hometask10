@@ -343,6 +343,16 @@ header {
         box-sizing: border-box;
         width: $widthFull;
         padding: 40px;
+
+        .navigation ul.navigationList li a {
+            &:hover {
+                font-family: $headerFont;
+                font-size: 13px;
+                background-color: $color-white;
+                color: $color-black;
+                text-transform: uppercase;
+            }
+        }
     }
 
     .headerContentWrapper {
@@ -354,7 +364,7 @@ header {
     .mainPhrase {
         padding-top: 100px;
         font-family: $headerFont;
-        font-weight: $font-weight-header;
+        font-weight: map-get($font-weight-header, bold);
         color: $color-white;
         font-size: 64;
         letter-spacing: 10px;
@@ -362,160 +372,161 @@ header {
 
 }
 
-header>.headerMenuWrapper .navigation>ul.navigationList li a:hover {
-    font-family: $headerFont;
-    font-size: 13px;
-    background-color: $color-white;
-    color: $color-black;
-    text-transform: uppercase;
-}
 
 
 /* Main section with pictures */
+
 main {
     section {
         display: flex;
         flex-wrap: wrap;
-    }
 
-    figure {
-        display: flex;
-        flex-wrap: wrap;
-        width: $widthFull;
-        position: relative;
-    }
-}
+        &.mainContent {
+            figure {
+                display: flex;
+                flex-wrap: wrap;
+                // width: $widthFull;
+                position: relative;
 
+                /* Pictures with separate text */
+                &.separateText {
+                    figcaption {
+                        @include flexContainer(column, center, center);
+                        gap: 50px;
 
-/* Pictures with separate text */
-main .separateText figcaption {
-    @include flexContainer(column, center, center);
-    gap: 50px;
+                        h3 {
+                            font-family: $headerFont;
+                            font-weight: map-get($font-weight-header, bold);
+                            width: 60%;
+                        }
 
-    h3 {
-        font-family: $headerFont;
-        font-weight: $font-weight-header;
-        width: 60%;
-    }
+                        p {
+                            font-weight: $font-weight-text;
+                            margin-top: 30px;
+                            width: 60%;
+                            color: $color-gray;
+                        }
 
-    p {
-        font-weight: $font-weight-text;
-        margin-top: 30px;
-        width: 60%;
-        color: $color-gray;
-    }
+                        a {
+                            font-size: 18px;
+                            font-family: $headerFont;
+                            font-weight: map-get($font-weight-header, regular);
+                            text-align: center;
 
-    a {
-        font-size: 18px;
-        font-family: $headerFont;
-        font-weight: 700;
-        text-align: center;
-    }
-}
+                            &:after {
+                                border-radius: 5px;
+                                content: "";
+                                width: 140px;
+                                height: 8px;
+                                display: block;
+                                margin-top: -9px;
+                                opacity: 0.3;
+                            }
 
-main .separateText figcaption a:after {
-    border-radius: 5px;
-    content: "";
-    width: 140px;
-    height: 8px;
-    display: block;
-    margin-top: -9px;
-    opacity: 0.3;
-}
+                            &.yellow:after {
+                                background-color: $color-yellow;
+                            }
 
-main .separateText figcaption a.yellow:after {
-    background-color: $color-yellow;
-}
+                            &.red:after {
+                                background-color: $color-red;
+                            }
+                        }
+                    }
+                }
 
-main .separateText figcaption a.red:after {
-    background-color: $color-red;
-}
+                /* Pictures with text on it */
+                &.imageText {
+                    figcaption {
+                        @include flexContainer(column);
 
+                        position: absolute;
+                        top: 60%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        text-align: center;
+                        gap: 40px;
 
+                        h3 {
+                            font-family: $headerFont;
+                            font-weight: map-get($font-weight-header, bold);
+                            width: $widthFull;
+                            opacity: 0.6;
+                        }
 
-/* Pictures with text on it */
+                        p {
+                            font-weight: 500;
+                            opacity: 0.6;
 
-main .imageText {
-    figcaption {
-        @include flexContainer(column);
+                        }
+                    }
 
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        gap: 40px;
-
-        h3 {
-            font-family: $headerFont;
-            font-weight: $font-weight-header;
-            width: $widthFull;
-            opacity: 0.6;
+                    img {
+                        width: $widthFull;
+                    }
+                }
+            }
         }
 
-        p {
-            font-weight: 500;
-            opacity: 0.6;
+        &.testimonial {}
 
-        }
-    }
-
-    img {
-        width: $widthFull;
+        &.pictures {}
     }
 }
+
 
 
 /* Testimonials section */
 
-main section.testimonial {
-    @include flexContainer(column, center, center);
-    text-align: center;
-    gap: 100px;
-    width: $widthFull;
-    margin: 100px 0 100px 0;
-
-    h1 {
-        font-family: $headerFont;
-        font-weight: $font-weight-header;
-        text-transform: uppercase;
+main {
+    .testimonial {
+        @include flexContainer(column, center, center);
         text-align: center;
-        color: $color-gray;
-        letter-spacing: 10px;
-        opacity: 0.8;
-    }
+        gap: 100px;
+        width: $widthFull;
+        margin: 100px 0 100px 0;
 
-    .testimonialList {
-        width: 70%;
+        h1 {
+            font-family: $headerFont;
+            font-weight: map-get($font-weight-header, bold);
+            text-transform: uppercase;
+            text-align: center;
+            color: $color-gray;
+            letter-spacing: 10px;
+            opacity: 0.8;
+        }
 
-        ul {
-            @include flexContainer(null, space-between);
-            list-style: none;
-            gap: 20px;
+        .testimonialList {
+            width: 70%;
 
-            li {
-                padding-bottom: 60px;
+            ul {
+                @include flexContainer(null, space-between);
+                list-style: none;
+                gap: 20px;
 
-                img {
-                    border-radius: 50%;
-                }
+                li {
+                    padding-bottom: 60px;
 
-                p {
-                    &.feedback {
-                        font-weight: $font-weight-text;
-                        padding-top: 30px;
-                        padding-bottom: 30px;
-                        color: $color-gray;
+                    img {
+                        border-radius: 50%;
                     }
 
-                    &.name {
-                        font-family: $headerFont;
-                        font-weight: $font-weight-header;
-                    }
+                    p {
+                        &.feedback {
+                            font-weight: $font-weight-text;
+                            padding-top: 30px;
+                            padding-bottom: 30px;
+                            color: $color-gray;
+                        }
 
-                    &.position {
-                        padding-top: 10px;
-                        opacity: 0.5;
+                        &.name {
+                            font-family: $headerFont;
+                            font-weight: map-get($font-weight-header, bold);
+                        }
+
+                        &.position {
+                            padding-top: 10px;
+                            opacity: 0.5;
+                        }
                     }
                 }
             }
