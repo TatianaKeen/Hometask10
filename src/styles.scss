@@ -173,6 +173,7 @@ a {
 }
 
 @media screen and (max-width: 1023px) {
+
     /* Header */
     header {
         section {
@@ -441,18 +442,6 @@ main {
                             font-family: $headerFont;
                             font-weight: map-get($font-weight-header, regular);
                             text-align: center;
-
-                            
-
-                            // &:after {
-                            //     border-radius: 5px;
-                            //     content: "";
-                            //     width: 140px;
-                            //     height: 8px;
-                            //     display: block;
-                            //     margin-top: -9px;
-                            //     opacity: 0.3;
-                            // }
 
                             &.yellow:after {
                                 @extend .linkBorder;
