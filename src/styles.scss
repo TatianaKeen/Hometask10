@@ -27,6 +27,16 @@ a {
     text-decoration: none;
 }
 
+.linkBorder {
+    border-radius: 5px;
+    content: "";
+    width: 140px;
+    height: 8px;
+    display: block;
+    margin-top: -9px;
+    opacity: 0.3;
+}
+
 @media screen and (min-width: 1024px) {
 
     /* Header */
@@ -432,21 +442,25 @@ main {
                             font-weight: map-get($font-weight-header, regular);
                             text-align: center;
 
-                            &:after {
-                                border-radius: 5px;
-                                content: "";
-                                width: 140px;
-                                height: 8px;
-                                display: block;
-                                margin-top: -9px;
-                                opacity: 0.3;
-                            }
+                            
+
+                            // &:after {
+                            //     border-radius: 5px;
+                            //     content: "";
+                            //     width: 140px;
+                            //     height: 8px;
+                            //     display: block;
+                            //     margin-top: -9px;
+                            //     opacity: 0.3;
+                            // }
 
                             &.yellow:after {
+                                @extend .linkBorder;
                                 background-color: $color-yellow;
                             }
 
                             &.red:after {
+                                @extend .linkBorder;
                                 background-color: $color-red;
                             }
                         }
