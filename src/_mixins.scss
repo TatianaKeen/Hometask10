@@ -1,0 +1,19 @@
+@mixin flexContainer ( $direction: null, $justify:null, $align: null, $flex: null ) {
+    display: flex;
+
+    @if $direction != null {
+        flex-direction: $direction;
+    } 
+
+    @if $justify != null {
+        justify-content: $justify;
+    } 
+
+    @if $align != null {
+        align-items: $align;
+    } 
+
+    @if $flex != null {
+        flex: $flex;
+    } 
+}
